@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Collections.Generic;
 
 namespace ConsoleApp6
 {
@@ -14,22 +15,23 @@ namespace ConsoleApp6
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome User! This is a Program that creates a Html blogpost");
-            Console.Write("Enter your name: ");
-            username = Convert.ToString(Console.ReadLine());
-            Console.Write("Enter your chosen File Name: ");
-            filename = Convert.ToString(Console.ReadLine());
-            Console.WriteLine("Enter Blog Title");
-            blogtitle = Convert.ToString(Console.ReadLine());
-            Console.WriteLine("Enter your Blog Content here: ");
-            blogcontent = Convert.ToString(Console.ReadLine());
-            
-            
-            var path = "C:\\New cshrp\\"+filename+".html";
-            LowLevelWrite(path);
-            Console.ReadLine();
-            
-            
+            //Console.WriteLine("Welcome User! This is a Program that creates a Html blogpost");
+            //Console.Write("Enter your name: ");
+            //username = Convert.ToString(Console.ReadLine());
+            //Console.Write("Enter your chosen File Name: ");
+            //filename = Convert.ToString(Console.ReadLine());
+            //Console.WriteLine("Enter Blog Title");
+            //blogtitle = Convert.ToString(Console.ReadLine());
+            //Console.WriteLine("Enter your Blog Content here: ");
+            //blogcontent = Convert.ToString(Console.ReadLine());
+
+
+            //var path = "C:\\New cshrp\\"+filename+".html";
+            //LowLevelWrite(path);
+            //Console.ReadLine();
+            ReverseInfo();
+
+
         }
 
 
@@ -45,8 +47,8 @@ namespace ConsoleApp6
                str.WriteLine("<meta name='viewport' content='width = device - width, initial - scale = 1.0'>");
                str.WriteLine($"<title> {blogtitle} </title>");
                str.WriteLine("</head>");
-               str.WriteLine("<body>");
-               str.WriteLine($"   <h1>{blogtitle}</h1>");
+               str.WriteLine("<body style='background-color:black; color:white; margin:0px;'>");
+               str.WriteLine($"  <h1 style='text-align:center;'>{blogtitle}</h1>");
                str.WriteLine($"<h5 style='background-color:black; color:white;'>{username} / {datepublished}</h5>");
                str.WriteLine($"<p style:>{blogcontent}</p>");
                str.WriteLine("</body>");
@@ -54,7 +56,32 @@ namespace ConsoleApp6
 
 
             }
-            
         }
-    }
+
+        static void ReverseInfo()
+        {
+            List<string> newComicEntries = new List<string>();
+            for (var i = 0; i < 3; i++)
+            {
+                Console.WriteLine("Enter Names of Comic Book entries for Eisner Award");
+                string entries = Convert.ToString(Console.ReadLine());
+
+                newComicEntries.Add(entries);
+
+            }
+            for (var j = 0; j < 3; j++)
+            {
+                Console.WriteLine(newComicEntries[j]);
+            }
+            
+            newComicEntries.Reverse();
+            
+            for(int j = 0; j < 3; j++)
+            {
+                Console.WriteLine(newComicEntries);
+            }
+            Console.ReadLine();
+        }
+            
+    }    
 }

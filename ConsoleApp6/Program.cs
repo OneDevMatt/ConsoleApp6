@@ -30,8 +30,6 @@ namespace ConsoleApp6
             LowLevelWrite(path);
             Console.ReadLine();
             ReverseInfo();
-
-
         }
 
 

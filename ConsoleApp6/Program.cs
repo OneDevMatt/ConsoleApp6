@@ -15,20 +15,20 @@ namespace ConsoleApp6
 
         static void Main(string[] args)
         {
-            //Console.WriteLine("Welcome User! This is a Program that creates a Html blogpost");
-            //Console.Write("Enter your name: ");
-            //username = Convert.ToString(Console.ReadLine());
-            //Console.Write("Enter your chosen File Name: ");
-            //filename = Convert.ToString(Console.ReadLine());
-            //Console.WriteLine("Enter Blog Title");
-            //blogtitle = Convert.ToString(Console.ReadLine());
-            //Console.WriteLine("Enter your Blog Content here: ");
-            //blogcontent = Convert.ToString(Console.ReadLine());
+            Console.WriteLine("Welcome User! This is a Program that creates a Html blogpost");
+            Console.Write("Enter your name: ");
+            username = Convert.ToString(Console.ReadLine());
+            Console.Write("Enter your chosen File Name: ");
+            filename = Convert.ToString(Console.ReadLine());
+            Console.WriteLine("Enter Blog Title");
+            blogtitle = Convert.ToString(Console.ReadLine());
+            Console.WriteLine("Enter your Blog Content here: ");
+            blogcontent = Convert.ToString(Console.ReadLine());
 
 
-            //var path = "C:\\New cshrp\\"+filename+".html";
-            //LowLevelWrite(path);
-            //Console.ReadLine();
+            var path = "C:\\New cshrp\\"+filename+".html";
+            LowLevelWrite(path);
+            Console.ReadLine();
             ReverseInfo();
 
 
@@ -69,16 +69,18 @@ namespace ConsoleApp6
                 newComicEntries.Add(entries);
 
             }
+            Console.WriteLine("This is the right order");
+
             for (var j = 0; j < 3; j++)
             {
                 Console.WriteLine(newComicEntries[j]);
             }
-            
+            Console.WriteLine("This is the reverse order");
             newComicEntries.Reverse();
             
             for(int j = 0; j < 3; j++)
             {
-                Console.WriteLine(newComicEntries);
+                Console.WriteLine(newComicEntries[j]);
             }
             Console.ReadLine();
         }

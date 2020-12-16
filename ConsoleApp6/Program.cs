@@ -13,8 +13,10 @@ namespace ConsoleApp6
         public static DateTime datepublished = DateTime.Now;
     
 
-        static void Main(string[] args)
+        static void Main(string[] args)//Assignment 1
         {
+            try
+            {
             Console.WriteLine("Welcome User! This is a Program that creates a Html blogpost");
             Console.Write("Enter your name: ");
             username = Convert.ToString(Console.ReadLine());
@@ -30,6 +32,13 @@ namespace ConsoleApp6
             LowLevelWrite(path);
             Console.ReadLine();
             ReverseInfo();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            
         }
 
 
@@ -56,7 +65,7 @@ namespace ConsoleApp6
             }
         }
 
-        static void ReverseInfo()
+        static void ReverseInfo()//Assignment 2
         {
             List<string> newComicEntries = new List<string>();
             for (var i = 0; i < 3; i++)
